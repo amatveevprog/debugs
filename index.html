@@ -1,0 +1,115 @@
+
+<html>
+
+<body>
+<style>
+body
+{
+  font-family: Helvetica;
+  margin-top:0px;
+  margin-left:0px;
+  margin-right:0px;
+  background: url(http://cs628719.vk.me/v628719222/25edb/WOnjHpkgc2E.jpg) repeat;
+  filter: alpha(opacity=90);
+}
+	.categoryshort
+{
+  width:100%;
+  height:50px;
+  //background:rgba(255,255,255, 0.7);
+  background-color:rgba(0, 0, 0, 0.69);
+  z-index:999;
+}
+
+.asphalt
+{
+	background-color:red; 
+	width:400px; 
+	height:40px;
+	display:none;
+}
+.asphalt-item
+{
+	border: 2px dotted black;
+	display:none;
+}
+</style>
+
+<script>
+	
+	var category_container_short = document.createElement("div");
+	category_container_short.style.display="none";
+	category_container_short.className="categoryshort";
+	document.body.appendChild(category_container_short);
+	document.body.style.height="10000px";
+
+	//category_container_short.style.display="none";
+	var new_Element = document.createElement("div");
+	//var new_Element = document.getElementById("newElement");
+	new_Element.style.display="none";
+	new_Element.className = "asphalt";
+	new_Element.innerText = "крошкИ";
+	var kp1=document.createElement("div");
+	kp1.className = "asphalt-item";
+	kp1.innerText = "Асфальтная крошка";
+	new_Element.appendChild(kp1);
+	var kp2=document.createElement("div");
+	kp2.className = "asphalt-item";
+	kp2.innerText = "Резиновая крошка";
+	new_Element.appendChild(kp2);
+	var kp3=document.createElement("div");
+	kp3.className = "asphalt-item";
+	kp3.innerText = "Хлебная крошка";
+	new_Element.appendChild(kp3);
+	
+	
+	category_container_short.appendChild(new_Element);
+	addEventListener("scroll",function(event)
+	{
+		category_container_short.style.position="fixed";
+		category_container_short.style.display="initial";
+	});
+	category_container_short.addEventListener("mouseenter",function(event)
+	{
+		new_Element.style.display="initial";
+	});
+	category_container_short.addEventListener("mouseleave",function(event)
+	{
+		new_Element.style.display="none";
+	});
+	
+	
+	function displaychildren(ParentDiv)
+	{
+		for(var i=0;i<ParentDiv.children.length;i++)
+		{
+			ParentDiv.children[i].style.display="initial";
+		}
+	}
+	function displayNONEchildren(ParentDiv)
+	{
+		for(var i=0;i<ParentDiv.children.length;i++)
+		{
+			ParentDiv.children[i].style.display="none";
+		}
+	}
+	new_Element.addEventListener("mouseenter",function()
+	{
+		displaychildren(new_Element);
+	});
+	new_Element.addEventListener("mouseleave",function()
+	{
+		displayNONEchildren(new_Element);
+	});
+	
+	
+	
+	
+	
+
+</script>
+	
+	
+
+ </body>
+</html>
